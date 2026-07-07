@@ -32,7 +32,8 @@ template repo (copy-and-own), while infrastructure building blocks live here
 
 ```
 modules/
-  network/    VPC + subnets (example module; the conventions reference)
+  network/       VPC + subnets (example module; the conventions reference)
+  github-oidc/   Keyless GitHub Actions -> GCP auth (Workload Identity Federation)
 ```
 
 ## Module conventions
