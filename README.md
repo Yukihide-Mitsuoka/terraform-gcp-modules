@@ -32,8 +32,10 @@ template repo (copy-and-own), while infrastructure building blocks live here
 
 ```
 modules/
-  network/       VPC + subnets (example module; the conventions reference)
-  github-oidc/   Keyless GitHub Actions -> GCP auth (Workload Identity Federation)
+  network/               VPC + subnets (example module; the conventions reference)
+  github-oidc/           Keyless GitHub Actions -> GCP auth (Workload Identity Federation)
+  bigquery-dataset/      BigQuery dataset + dataset-level least-privilege IAM
+  bigquery-policy-tags/  Sensitivity taxonomy + policy tags (column-level security)
 ```
 
 ## Module conventions
