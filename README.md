@@ -36,6 +36,9 @@ modules/
   github-oidc/           Keyless GitHub Actions -> GCP auth (Workload Identity Federation)
   bigquery-dataset/      BigQuery dataset + dataset-level least-privilege IAM
   bigquery-policy-tags/  Sensitivity taxonomy + policy tags (column-level security)
+  bigquery-data-policy/  Column masking bound to a policy tag (+ maskedReader grants)
+  log-router-sink/       Audit-log routing sink + destination writer grant
+  bq-inspector-role/     Read-only custom role for the BQ inspection path
 ```
 
 ## Module conventions
