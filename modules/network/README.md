@@ -7,7 +7,7 @@ this library (no provider block, validated inputs, minimal outputs).
 
 ```hcl
 module "network" {
-  source     = "git::https://github.com/Yukihide-Mitsuoka/terraform-gcp-modules.git//modules/network?ref=v0.1.0"
+  source     = "git::https://github.com/Yukihide-Mitsuoka/terraform-gcp-modules.git//modules/network?ref=v0.5.0"
   project_id = "my-project"
   name       = "core"
   subnets = [
@@ -23,6 +23,14 @@ module "network" {
 | `project_id` | `string` | — | GCP project that owns the network |
 | `name` | `string` | — | VPC name; also prefixes subnet names (`<name>-<subnet>`) |
 | `subnets` | `list(object({name, cidr, region}))` | `[]` | Subnets to create |
+
+## Security defaults
+
+Every managed subnet enables VPC Flow Logs with a five-second aggregation interval,
+50% sampling, and all metadata. This provides traffic evidence for investigation and
+monitoring, while adding Cloud Logging ingestion and retention cost. These values are
+fixed in this release; introduce configuration only when a concrete consumer requires a
+different volume or metadata trade-off.
 
 ## Outputs
 
