@@ -28,3 +28,17 @@ jobs:
             terraform -chdir="$dir" init -backend=false -input=false >/dev/null
             terraform -chdir="$dir" validate -no-color
           done
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Verify module security contracts
+        run: python3 -m unittest discover -s tests -p 'test_*.py'
+      - name: Scan Terraform modules
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          scan-type: config
+          scan-ref: modules
+          severity: MEDIUM,HIGH,CRITICAL
+          exit-code: "1"
