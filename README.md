@@ -5,7 +5,7 @@ pin a released tag via a git source — they do not vendor this code.
 
 ```hcl
 module "network" {
-  source     = "git::https://github.com/Yukihide-Mitsuoka/terraform-gcp-modules.git//modules/network?ref=v0.1.0"
+  source     = "git::https://github.com/Yukihide-Mitsuoka/terraform-gcp-modules.git//modules/network?ref=v0.5.0"
   project_id = var.project_id
   name       = "core"
   subnets = [
